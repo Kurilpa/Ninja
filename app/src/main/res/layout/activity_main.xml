@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="normanco.ninja.MainActivity">
+
+    <ImageView
+        android:id="@+id/imv_photo_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:background="@color/colorbg"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imv_main_boxes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ninja_main_dates" />
+
+    <TextView
+        android:id="@+id/txv_main_top_1"
+        android:layout_width="39dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="17dp"
+        android:fontFamily="@font/hobostd"
+        android:textColor="#FFFEF2"
+        android:gravity="center"
+        android:text="22"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/imv_main_boxes"
+        app:layout_constraintTop_toTopOf="@+id/imv_main_boxes" />
+
+    <TextView
+        android:id="@+id/txv_main_top_2"
+        android:layout_width="39dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="40dp"
+        android:fontFamily="@font/hobostd"
+        android:textColor="#FFFEF2"
+        android:gravity="center"
+        android:text="22"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/txv_main_top_1"
+        app:layout_constraintTop_toTopOf="@+id/txv_main_top_1" />
+
+    <TextView
+        android:id="@+id/txv_main_top_3"
+        android:layout_width="39dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="41dp"
+        android:fontFamily="@font/hobostd"
+        android:textColor="#FFFEF2"
+        android:gravity="center"
+        android:text="22"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/txv_main_top_2"
+        app:layout_constraintTop_toTopOf="@+id/txv_main_top_2" />
+
+    <TextView
+        android:id="@+id/txv_main_top_4"
+        android:layout_width="39dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="40dp"
+        android:fontFamily="@font/hobostd"
+        android:textColor="#FFFEF2"
+        android:gravity="center"
+        android:text="22"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/txv_main_top_3"
+        app:layout_constraintTop_toTopOf="@+id/txv_main_top_3" />
+
+    <TextView
+        android:id="@+id/txv_main_bott_1"
+        android:layout_width="39dp"
+        android:layout_height="39dp"
+        android:layout_marginBottom="17dp"
+        android:layout_marginStart="0dp"
+        android:fontFamily="@font/hobostd"
+        android:textColor="#FFFEF2"
+        android:gravity="center"
+        android:text="22"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imv_main_boxes"
+        app:layout_constraintStart_toStartOf="@+id/imv_main_boxes" />
+
+    <TextView
+        android:id="@+id/txv_main_bott_2"
+        android:layout_width="39dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="40dp"
+        android:fontFamily="@font/hobostd"
+        android:textColor="#FFFEF2"
+        android:gravity="center"
+        android:text="22"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/txv_main_bott_1"
+        app:layout_constraintTop_toTopOf="@+id/txv_main_bott_1" />
+
+    <TextView
+        android:id="@+id/txv_main_bott_3"
+        android:layout_width="39dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="41dp"
+        android:fontFamily="@font/hobostd"
+        android:textColor="#FFFEF2"
+        android:gravity="center"
+        android:text="22"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/txv_main_bott_2"
+        app:layout_constraintTop_toTopOf="@+id/txv_main_bott_2" />
+
+    <TextView
+        android:id="@+id/txv_main_bott_4"
+        android:layout_width="39dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="40dp"
+        android:fontFamily="@font/hobostd"
+        android:textColor="#FFFEF2"
+        android:gravity="center"
+        android:text="22"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/txv_main_bott_3"
+        app:layout_constraintTop_toTopOf="@+id/txv_main_bott_3" />
+
+    <TextView
+        android:id="@+id/txv_gestation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/hobostd"
+        android:textColor="#FFFEF2"
+        android:textSize="16dp"
+        android:text=" "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txv_born_at"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/mistral"
+        android:textColor="#FFFEF2"
+        android:textSize="16dp"
+        android:text="Gestational Period Was"
+        app:layout_constraintBottom_toTopOf="@+id/txv_gestation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+</android.support.constraint.ConstraintLayout>

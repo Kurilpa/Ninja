@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_edit_state1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="normanco.ninja.EditActivity">
+
+    <ImageView
+        android:id="@+id/imv_photo_edit"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorbg"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageButton
+        android:id="@+id/btn_gallery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="38dp"
+        android:background="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_photo"
+        app:srcCompat="@mipmap/ninja_btn_gallery" />
+
+    <ImageButton
+        android:id="@+id/btn_camera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="38dp"
+        android:background="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_photo"
+        app:srcCompat="@mipmap/ninja_btn_camera" />
+
+    <ImageButton
+        android:id="@+id/btn_photo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="32dp"
+        android:background="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ninja_btn_photo" />
+
+    <ImageButton
+        android:id="@+id/btn_ok"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="32dp"
+        android:layout_marginStart="32dp"
+        android:background="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@mipmap/ninja_btn_ok" />
+
+    <ImageView
+        android:id="@+id/imv_due_date_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.317"
+        app:srcCompat="@mipmap/ninja_boxes_due" />
+
+    <ImageView
+        android:id="@+id/imv_born_date_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.663"
+        app:srcCompat="@mipmap/ninja_boxes_born" />
+
+    <TextView
+        android:id="@+id/txv_due_date"
+        android:layout_width="225dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/hobostd"
+        android:gravity="center"
+        android:text="21 August 2018"
+        android:textColor="#fffef2"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imv_due_date_edit"
+        app:layout_constraintEnd_toEndOf="@+id/imv_due_date_edit"
+        app:layout_constraintStart_toStartOf="@+id/imv_due_date_edit"
+        app:layout_constraintTop_toTopOf="@+id/imv_due_date_edit" />
+
+    <TextView
+        android:id="@+id/txv_birth_date"
+        android:layout_width="225dp"
+        android:layout_height="44dp"
+        android:layout_marginBottom="24dp"
+        android:fontFamily="@font/hobostd"
+        android:gravity="center"
+        android:text="30 August 2018"
+        android:textColor="#fffef2"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imv_born_date_edit"
+        app:layout_constraintEnd_toEndOf="@+id/imv_born_date_edit"
+        app:layout_constraintStart_toStartOf="@+id/imv_born_date_edit"
+        app:layout_constraintTop_toTopOf="@+id/imv_born_date_edit" />
+
+</android.support.constraint.ConstraintLayout>
