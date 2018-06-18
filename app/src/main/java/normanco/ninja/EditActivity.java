@@ -51,7 +51,7 @@ public class EditActivity extends AppCompatActivity implements DatePickerFragmen
     int viewClicked;                        //stores which date was selected to be edited
     int usingDefImage;
     private static final int PICK_IMAGE = 100;
-    private static final int CAMERA_REQUEST = 150;
+    private static final int CAMERA_REQUEST = 200;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -186,6 +186,7 @@ public class EditActivity extends AppCompatActivity implements DatePickerFragmen
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        Log.i(TAG, "Request code: " + requestCode + "\n" + "Result Code: " + resultCode);
 
         if(resultCode == RESULT_OK && requestCode == PICK_IMAGE){
             imageBackground = data.getData();
@@ -212,7 +213,12 @@ public class EditActivity extends AppCompatActivity implements DatePickerFragmen
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        openGallery();
+        if(requestCode == PICK_IMAGE){
+            openGallery();
+        }
+        if(requestCode == Permissions.PERMISSION_MULTI_REQUEST) {
+            openCamera();
+        }
     }
 
     private void buttonCollapse(Context mContext) {
