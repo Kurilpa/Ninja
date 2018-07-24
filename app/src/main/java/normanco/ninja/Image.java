@@ -25,30 +25,26 @@ public class Image {
     private static Uri defImage;
     private static Uri image;
 
-    public Image() {    }
+    public Image() {
+        defImage = Uri.parse("android.resource://normanco.ninja/" + R.mipmap.ninja_default_bg);
+    }
 
-    public static Uri getImageUri (){
-        Log.i(TAG, "Get Image Uri: " + image);
+    public Image(Context mContext, String path) {
+        defImage = Uri.parse("android.resource://normanco.ninja/" + R.mipmap.ninja_default_bg);
+        File file = new File(path);
+        image = GetUriFromPath.getImageContentUri(mContext, file);
+    }
+
+    public Uri getImageUri (){
         return image;
     }
 
-    public static Uri getDefImageUri(){
-        Log.i(TAG, "Get Default Image Uri: " + defImage);
+    public Uri getDefImageUri(){
         return defImage;
     }
 
-    public static void setImageUri(Context mContext, String path){
-        File file = new File(path);
-        image = GetUriFromPath.getImageContentUri(mContext, file);
-        Log.i(TAG, "User image uri set: " + image);
-    }
-
-    public static void setDefImageUri(){
-        defImage = Uri.parse("android.resource://normanco.ninja/" + R.mipmap.ninja_default_bg);
-        Log.i(TAG, "Default image uri set: " + defImage);
-    }
-
     public static Matrix rotateImage (Context mContext, Uri uri, int imageDefFlag){
+        Log.i(TAG, "Using default flag: " + imageDefFlag);
         int orientation;
         float scale, screenHeight, screenWidth, imageHeight, imageWidth;
         Matrix matrix = new Matrix();
@@ -69,7 +65,7 @@ public class Image {
 
             if(imageDefFlag == DEFAULT_IMAGE){
                 orientation = DEFAULT_IMAGE;
-                Log.i(TAG, "Matrix, Using default image: " + e);
+                Log.i(TAG, "Matrix, Using default imageBackground: " + e);
             }
             else{
                 Log.i(TAG, "Image path not found: " + e);
@@ -80,25 +76,25 @@ public class Image {
         switch (orientation) {
             case ExifInterface.ORIENTATION_NORMAL:
                 scale = (screenHeight / imageHeight > screenWidth / imageWidth) ? screenHeight / imageHeight : screenWidth / imageWidth;        Log.i(TAG, "Scale normal: " + scale);
-                matrix.postScale(scale, scale, imageWidth / 2 , imageHeight / 2);                                                       Log.i(TAG, "Scaled image dimensions: " + imageHeight * scale);
+                matrix.postScale(scale, scale, imageWidth / 2 , imageHeight / 2);                                                       Log.i(TAG, "Scaled imageBackground dimensions: " + imageHeight * scale);
                 matrix.postTranslate((screenWidth - imageWidth) / 2, (screenHeight - imageHeight) / 2);
                 matrix.postRotate(0);
                 break;
             case ExifInterface.ORIENTATION_ROTATE_90:
                 scale = (screenWidth / imageHeight > screenHeight / imageWidth) ? screenWidth / imageHeight : screenHeight / imageWidth;        Log.i(TAG, "Scale 90: " + scale);
-                matrix.postScale(scale, scale, 0, 0);                                                                                   Log.i(TAG, "Scaled image dimensions: " + imageHeight * scale);
+                matrix.postScale(scale, scale, 0, 0);                                                                                   Log.i(TAG, "Scaled imageBackground dimensions: " + imageHeight * scale);
                 matrix.postTranslate((screenWidth / 2 - imageWidth * scale / 2), (screenHeight / 2 - imageHeight * scale / 2));
                 matrix.postRotate(90, screenWidth / 2, screenHeight / 2);
                 break;
             case ExifInterface.ORIENTATION_ROTATE_180:
                 scale = (screenHeight / imageHeight > screenWidth / imageWidth) ? screenHeight / imageHeight : screenWidth / imageWidth;        Log.i(TAG, "Scale 180: " + scale);
-                matrix.postScale(scale, scale, imageWidth / 2, imageHeight / 2);                                                        Log.i(TAG, "Scaled image dimensions: " + imageHeight * scale);
+                matrix.postScale(scale, scale, imageWidth / 2, imageHeight / 2);                                                        Log.i(TAG, "Scaled imageBackground dimensions: " + imageHeight * scale);
                 matrix.postTranslate((screenWidth - imageWidth) / 2, (screenHeight - imageHeight) / 2);
                 matrix.postRotate(180, screenWidth / 2, screenHeight / 2);
                 break;
             case ExifInterface.ORIENTATION_ROTATE_270:
                 scale = (screenHeight / imageWidth > screenWidth / imageHeight) ? screenHeight / imageWidth : screenWidth / imageHeight;        Log.i(TAG, "Scale 270: " + scale);
-                matrix.postScale(scale, scale, imageWidth / 2, imageHeight / 2);                                                        Log.i(TAG, "Scaled image dimensions: " + imageHeight * scale);
+                matrix.postScale(scale, scale, imageWidth / 2, imageHeight / 2);                                                        Log.i(TAG, "Scaled imageBackground dimensions: " + imageHeight * scale);
                 matrix.postTranslate((screenWidth - imageWidth) / 2, (screenHeight - imageHeight) / 2);
                 matrix.postRotate(270, screenWidth / 2, screenHeight / 2);
                 break;
@@ -106,7 +102,7 @@ public class Image {
                 imageWidth = ContextCompat.getDrawable(mContext, R.mipmap.ninja_default_bg).getIntrinsicWidth();                                Log.i(TAG, "Drawable width: " + imageWidth);
                 imageHeight = ContextCompat.getDrawable(mContext, R.mipmap.ninja_default_bg).getIntrinsicHeight();                              Log.i(TAG, "Drawable height: " + imageHeight);
                 scale = (screenWidth / imageWidth) * (float) 1.2;
-                matrix.postScale(scale, scale, imageWidth / 2, imageHeight / 2);                                                                                                 Log.i(TAG, "Default Image matrix scale");
+                matrix.postScale(scale, scale, imageWidth / 2, imageHeight / 2);                                                        Log.i(TAG, "Default Image matrix scale");
                 matrix.postTranslate((screenWidth - imageWidth) / 2,(screenHeight - imageHeight) * (float) 0.8);
                 matrix.postRotate(0);
                 break;
